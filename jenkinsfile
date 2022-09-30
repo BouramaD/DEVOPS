@@ -10,7 +10,7 @@ node {
     }
 
     stage('Test') {
-        docker.image('atos06/ipiformation').withRun('--rm -p 80:80 --name devops') { c ->
+        docker.image('atos06/ipiformation').withRun('--rm -p 80:80 --name jenkins-docker') { c ->
         sh 'docker ps'
         sh 'docker exec devops curl localhost:80'
         sh 'echo "Tests passed"'
